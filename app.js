@@ -2,20 +2,27 @@
 
 //   return [firstIndex,secondIndex]
 //   }
-
-let numberArray = [
+const numberArray = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
 ];
 
-let targetNumber = 11;
+let targetNumber = prompt("Write a number between 1 and 20.");
 
 function twoSum(numberArray, targetNumber) {
-  for (let i = 0; i <= numberArray.length; i++) {
-    let firstIndex = numberArray[i];
-    let secondIndex = numberArray[i - 1];
-    if ((targetNumber = firstIndex + secondIndex)) {
-      console.log(firstIndex, secondIndex);
+  let firstIndex = 0;
+  let secondIndex = numberArray.length - 1;
+  while (firstIndex < secondIndex) {
+    const sum = numberArray[firstIndex] + numberArray[secondIndex];
+    if (sum === targetNumber) {
+      prompt(
+        `If you add ${firstIndex} and ${secondIndex}, you get ${targetNumber}`
+      );
+      return [firstIndex, secondIndex];
+    } else if (sum < targetNumber) {
+      firstIndex++;
+    } else {
+      secondIndex--;
     }
-    return;
   }
 }
+twoSum(numberArray, targetNumber);
