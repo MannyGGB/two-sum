@@ -1,26 +1,3 @@
-// function twoSum(array,target) {
-
-//   return [firstIndex,secondIndex]
-//   }
-
-// function twoSum(numberArray, targetNumber) {
-//   let firstIndex = 0;
-//   let secondIndex = numberArray.length - 1;
-//   while (firstIndex < secondIndex) {
-//     const sum = numberArray[firstIndex] + numberArray[secondIndex];
-//     if (sum === targetNumber) {
-//       prompt(
-//         `If you add ${firstIndex} and ${secondIndex}, you get ${targetNumber}`
-//       );
-//       return [firstIndex, secondIndex];
-//     } else if (sum < targetNumber) {
-//       firstIndex++;
-//     } else {
-//       secondIndex--;
-//     }
-//   }
-// }
-
 const numberArray = [1, 10, 3, 11, 14];
 
 let targetNumber = +prompt("Write a number between 1 and 20.");
@@ -58,3 +35,26 @@ function twoSum(numberArray, targetNumber) {
 }
 
 twoSum(numberArray, targetNumber);
+
+// For loop within a for loop
+// const twoSum = (nArray, target) => {
+//   for (let i = 0; i < nArray.length; i++) {
+//     for (let j = 0; j < nArray.length; j++) {
+//       if (nArray[i] + nArray[j] === target) {
+//         return [i, j]
+//       }
+//     }
+//   }
+//   }
+//   console.log(twoSum([1,2,3,4,5,6,7,8,9],7))
+
+// Two sum with hashmap to optimise time complexity
+// const betterTwoSum = (nArr, target) => {
+//   let hash = new Map();
+//   for (let i = 0; i <= nArr.length; i++){
+//     let compliment = target - nArr[i];
+//     if (hash.has(nArr[i])) return [hash.get(nArr[i]), i]
+//     hash.set(compliment, i)
+//   }
+// }
+// console.log(betterTwoSum([1,2,3,4,5,6,7,8,9,10], 6))
